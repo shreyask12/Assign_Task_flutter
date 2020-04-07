@@ -165,6 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                                     },
                                     controller: textnamecontroller,
                                     keyboardType: TextInputType.emailAddress,
+                                    maxLength: 10,
                                     decoration: InputDecoration(
                                     hintText: 'Username',
                                     errorText: emailValid ? null :  widget.emailerror,
@@ -198,6 +199,7 @@ class _LoginPageState extends State<LoginPage> {
                                     keyboardType: TextInputType.text,
                                     controller: passwordcontroller,
                                     obscureText: true,
+                                    maxLength: 10,
                                     decoration: InputDecoration(
                                     errorText: passwordValid ? null : widget.passwordError,
                                     hintText: 'Password',
