@@ -3,6 +3,7 @@ import 'package:assign_task/model/UserModel.dart';
 import 'package:assign_task/accounts.dart';
 // import 'package:assign_task/widgets/CommonMenu.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:assign_task/model/validators.dart';
 import 'widgets/button.dart';
@@ -156,6 +157,9 @@ class _LoginPageState extends State<LoginPage> {
                                 child: SizedBox(
                                   width: ScreenUtil().setWidth(230),
                                   child: TextField(
+                                    inputFormatters:[
+                                      LengthLimitingTextInputFormatter(10),
+                                    ],
                                     onChanged: (val){
                                       if(val != ''){
                                         setState(() {
@@ -165,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                                     },
                                     controller: textnamecontroller,
                                     keyboardType: TextInputType.emailAddress,
-                                    maxLength: 10,
+                                    // maxLength: 10,
                                     decoration: InputDecoration(
                                     hintText: 'Username',
                                     errorText: emailValid ? null :  widget.emailerror,
@@ -189,6 +193,9 @@ class _LoginPageState extends State<LoginPage> {
                                 child: SizedBox(
                                   width: ScreenUtil().setWidth(230),
                                   child: TextField(
+                                    inputFormatters:[
+                                      LengthLimitingTextInputFormatter(10),
+                                    ],
                                     onChanged: (val){
                                     if(val != ''){
                                         setState(() {
@@ -199,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                                     keyboardType: TextInputType.text,
                                     controller: passwordcontroller,
                                     obscureText: true,
-                                    maxLength: 10,
+                                    // maxLength: 10,
                                     decoration: InputDecoration(
                                     errorText: passwordValid ? null : widget.passwordError,
                                     hintText: 'Password',
